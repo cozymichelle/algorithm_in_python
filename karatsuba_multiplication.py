@@ -15,14 +15,6 @@ multiply(x1, x2):
 import numpy as np
 import sys
 
-# Get the two integers to multiply
-try:
-	input1 = int(sys.argv[1])
-	input2 = int(sys.argv[2])
-except IndexError:
-	print("input values were not given")
-	sys.exit()
-
 def multiply(x1, x2):
 	# Get the length of input x1 and x2
 	x1size = len(str(x1))
@@ -56,5 +48,14 @@ def multiply(x1, x2):
 		return (ac * 10**(2*half_size) + bd + prod4 * 10**half_size)
 		
 if __name__=='__main__':
+
+	# Get the two integers to multiply
+	try:
+		input1 = int(sys.argv[1])
+		input2 = int(sys.argv[2])
+	except IndexError:
+		print("input values were not given")
+		sys.exit()
+
 	result = multiply(input1, input2)
 	print(result)

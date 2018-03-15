@@ -21,9 +21,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--left", default=False, action="store_true", help="use the leftmost element as a pivot")
 parser.add_argument("--file_dir", type=str, default="./QuickSort.txt", help="directory of an input file")
-args = parser.parse_args()
 
-data = np.loadtxt(args.file_dir)
 
 def Partition(arr, left, right):
 	if args.left:
@@ -54,5 +52,7 @@ def QuickSort(arr, left, right):
 	return count
 
 if __name__=='__main__':
+	args = parser.parse_args()
+	data = np.loadtxt(args.file_dir)
 	cnt = QuickSort(data, 0, len(data)-1)
 	print(cnt, data)

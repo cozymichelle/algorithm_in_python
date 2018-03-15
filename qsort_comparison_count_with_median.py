@@ -14,15 +14,6 @@ output: count, sorted array
 import numpy as np
 import sys
 
-# load integer array file to the variable called 'data'
-try:
-	filename = sys.argv[1]
-except IndexError:
-	print("input file was not given")
-	sys.exit()
-
-data = np.loadtxt(filename)
-
 def getMedian(arr, left, right):
 	mid = (right-left)//2 + left
 	med_idx = 0
@@ -69,5 +60,12 @@ def QuickSort(arr, left, right):
 	return count
 
 if __name__=='__main__':
+	try:
+		filename = sys.argv[1]
+	except IndexError:
+		print("input file was not given")
+		sys.exit()
+
+	data = np.loadtxt(filename)
 	cnt = QuickSort(data, 0, len(data)-1)
 	print(cnt, data)

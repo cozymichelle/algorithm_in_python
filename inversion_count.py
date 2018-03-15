@@ -24,15 +24,6 @@ runtime: O(n*log(n))
 import numpy as np
 import sys
 
-# load integer array file to the variable called 'data'
-try:
-	filename = sys.argv[1]
-except IndexError:
-	print("input file was not given")
-	sys.exit()
-
-data = np.loadtxt(filename)
-
 def sortNcount(arr):
 	n = len(arr)
 	if n==1:
@@ -67,4 +58,11 @@ def mergeNcountSplitInv(sorted1, sorted2, num):
 	return sorted, splitInv
 	
 if __name__=='__main__':
+	try:
+		filename = sys.argv[1]
+	except IndexError:
+		print("input file was not given")
+		sys.exit()
+
+	data = np.loadtxt(filename)
 	print(sortNcount(data))
