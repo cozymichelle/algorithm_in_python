@@ -2,7 +2,7 @@
 Implement Dijkstra's algorithm to find single-source shortest paths
 
 input: adjacency list of an undirected weighted graph
-	e.g. "1	5,11" means that there is an edge between vertex 1 and 5 and its weight is 11.
+	e.g. "1  5,11  8,3" means that there is an edge between vertex 1 and 5 and its weight is 11. Also there is an edge between vertex 1 and 8 and its weight is 3.
 output: vertex number, shortest distance from source, shortest path
 	e.g. "2	1 [1, 2]" means that shortest distance from source vertex to vertex 2 is 1 and the path is "1(source)->2".
 
@@ -24,22 +24,20 @@ class Graph:
 	def __init__(self, filename):
 		with open(filename) as f:
 			# get adjacency list from input file
+			# a dictionary with format {vertex: [adjacent vertex, weight]}
 			self.adj_list = dict()
 			for x in f:
 				line = x.split('\t')
-				#print(line)
 				self.adj_list[int(line[0])] = [[int(z) for z in y.split(',')] for y in line[1:-1]]
-			#self.adj_list = np.loadtxt((x.replace(',','	') for x in f), dtype=int)
-			n_vertices = len(self.adj_list)	# number of vertices
 			
+			n_vertices = len(self.adj_list)	# number of vertices
 			self.processed = np.zeros(n_vertices)
 				# boolean array to check whether a vertex is already processed
 			self.shortest = dict()
 				# dictionary to store shortest path info
 				# {vertex: shortest distance, [shortest path from source]}
-			
-			# initialize MinHeap for shortest path
 			self.dist_heap = MinHeap(n_vertices)
+				# initialize MinHeap for shortest path
 	
 	
 	def do_dijkstra(self, source):
