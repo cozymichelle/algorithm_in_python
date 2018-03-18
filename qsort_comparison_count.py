@@ -14,7 +14,6 @@ input: integer array text file
 output: count, sorted array
 '''
 import numpy as np
-import sys
 import argparse
 
 # get argument

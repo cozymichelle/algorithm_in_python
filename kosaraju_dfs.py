@@ -1,6 +1,6 @@
 '''
 compute SCCs of a directed graph
-usihng Kosaraju's Two-Pass Algorithm
+using Kosaraju's Two-Pass Algorithm
 
 input: ex. 1	2 => 1->2
 output: sizes of the 5 largest SCCs in decreasing order
