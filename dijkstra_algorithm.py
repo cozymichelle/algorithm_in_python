@@ -2,7 +2,8 @@
 Implement Dijkstra's algorithm to find single-source shortest paths
 
 input: adjacency list of an undirected weighted graph
-	e.g. "1  5,11  8,3" means that there is an edge between vertex 1 and 5 and its weight is 11. Also there is an edge between vertex 1 and 8 and its weight is 3.
+	e.g. "1  5,11  8,3" means that there is an edge between vertex 1 and 5 and its weight is 11. 
+	Also there is an edge between vertex 1 and 8 and its weight is 3.
 output: vertex number, shortest distance from source, shortest path
 	e.g. "2	1 [1, 2]" means that shortest distance from source vertex to vertex 2 is 1 and the path is "1(source)->2".
 
@@ -70,7 +71,6 @@ class Graph:
 			
 class MinHeap():
 	def __init__(self, vertex_num):
-		# initialize with vertex number and its distance value, which is infinite
 		self.minheap = []
 	
 	def add_node(self, vertex_num, distance, prev_vnum):
