@@ -11,7 +11,7 @@ Output: index of the element x
 
 # Recursive binary search
 def rec_binsearch(arr, x, l, r):
-    if (l > r or r < l): # if index out of bound
+    if l > r or r < l: # if index out of bound
         return -1
 
     n = r - l + 1       # size of the array from l to r
@@ -26,7 +26,7 @@ def rec_binsearch(arr, x, l, r):
 
 # Iterative binary search
 def itr_binsearch(arr, x, l, r):
-    while (l <= r):
+    while l <= r:
         i = l + (r - l + 1) // 2
         if x == arr[i]:
             return i
